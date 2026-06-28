@@ -1,0 +1,22 @@
+[
+  {
+    "id": "comp_1",
+    "title": "Wifi not working in Library 2nd floor",
+    "description": "The WiFi signal on the second floor of the central library is extremely weak and keeps disconnecting every 5 minutes. Needs router check.",
+    "isAnonymous": true,
+    "isResolved": false,
+    "posterEmail": "25115001@college.edu",
+    "posterName": "Sanjeevani Rao",
+    "createdAt": 1782497460214
+  },
+  {
+    "id": "comp_2",
+    "title": "Mess food quality issue (Hostel 3)",
+    "description": "Found raw paneer pieces in dinner tonight. This is a recurring issue with hygiene and food prep. Please address this.",
+    "isAnonymous": true,
+    "isResolved": true,
+    "posterEmail": "25115002@college.edu",
+    "posterName": "Rahul Sharma",
+    "createdAt": 1782454260214
+  }
+]

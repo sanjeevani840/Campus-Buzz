@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampBuzz - Premium Campus Coordination & Social Layer for students.">
+  <meta name="theme-color" content="#050505">
+  <title>CampBuzz — Smart Campus Digital Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="phase3.css">
+</head>
+<body>
+
+  <!-- ================= BACKGROUND KINETIC EFFECTS ================= -->
+  <div id="cursor-glow"></div>
+  <div class="aurora-bg">
+    <div class="mesh-gradient"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+  </div>
+  <div class="noise-overlay"></div>
+  <div class="light-rays" aria-hidden="true"></div>
+  <div class="particle-field" id="particle-field" aria-hidden="true"></div>
+
+  <!-- ================= LANDING / AUTH PAGE ================= -->
+  <div id="auth-page" class="view-page active">
+
+    <!-- Liquid Glass Navigation -->
+    <nav class="landing-nav glass-nav" aria-label="Landing navigation">
+      <div class="landing-nav-inner">
+        <a href="#" class="landing-logo" onclick="return false;">
+          <span class="logo-icon">🎓</span>
+          <span class="landing-logo-text">CAMP<span>BUZZ</span></span>
+        </a>
+        <div class="landing-nav-links">
+          <a href="#landing-features" class="landing-nav-link">Features</a>
+          <a href="#landing-preview" class="landing-nav-link">Platform</a>
+          <a href="#landing-timeline" class="landing-nav-link">Journey</a>
+          <a href="#landing-testimonials" class="landing-nav-link">Stories</a>
+        </div>
+        <a href="#landing-signin" class="btn btn-primary btn-nav-cta">Sign In</a>
+      </div>
+    </nav>
+
+    <!-- Cinematic Hero -->
+    <section class="landing-hero" id="landing-hero">
+      <div class="hero-ambient">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+      </div>
+
+      <div class="landing-hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-eyebrow">Smart Campus Platform</div>
+          <h1 class="hero-title">
+            The Future of<br>
+            <span class="hero-title-accent">Campus Life</span>
+          </h1>
+          <p class="hero-subtitle">Verified coordination, real-time community, and premium campus intelligence — all in one luxurious digital experience.</p>
+          <div class="hero-cta-row">
+            <a href="#landing-signin" class="btn btn-primary btn-glow btn-lg">Get Started &rarr;</a>
+            <a href="#landing-features" class="btn btn-secondary btn-lg">Explore Features</a>
+          </div>
+        </div>
+
+        <!-- Floating Glass Preview Cards -->
+        <div class="hero-float-cards" aria-hidden="true">
+          <div class="float-glass-card float-card-1 glass-card">
+            <div class="float-card-icon">📊</div>
+            <div class="float-card-label">Live Analytics</div>
+            <div class="float-card-value landing-stat" data-count="2847">0</div>
+          </div>
+          <div class="float-glass-card float-card-2 glass-card">
+            <div class="float-card-icon">🎯</div>
+            <div class="float-card-label">Active Events</div>
+            <div class="float-card-value landing-stat" data-count="156">0</div>
+          </div>
+          <div class="float-glass-card float-card-3 glass-card">
+            <div class="float-card-icon">✅</div>
+            <div class="float-card-label">Resolved Issues</div>
+            <div class="float-card-value landing-stat" data-count="98">0</div>
+            <div class="float-card-unit">%</div>
+          </div>
+        </div>
+
+        <!-- Sign In & Register Card -->
+        <div class="auth-container" id="landing-signin">
+          <div class="auth-card glass-card auth-card-premium">
+            <div class="auth-brand">
+              <div class="logo-icon">🎓</div>
+              <h1>CAMP<span>BUZZ</span></h1>
+              <p>Verified Campus Coordination & Social Layer</p>
+            </div>
+            
+            <!-- Login Container -->
+            <div id="login-form-container">
+              <form id="login-form">
+                <div class="form-group">
+                  <label for="login-roll">Roll Number</label>
+                  <input type="text" id="login-roll" placeholder="e.g. 25115001" required autocomplete="username">
+                </div>
+                <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input type="password" id="login-password" placeholder="••••••••" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-glow">Verify & Sign In &rarr;</button>
+              </form>
+              <p class="auth-toggle-text" style="text-align: center; margin-top: 16px; font-size: 0.85rem; color: var(--text-secondary);">
+                Don't have an account? <a href="#" onclick="toggleAuthMode('register'); return false;" style="color: var(--accent-gold); font-weight: 500; text-decoration: none;">Register</a>
+              </p>
+            </div>
+
+            <!-- Registration Container (hidden initially) -->
+            <div id="register-form-container" style="display: none;">
+              <form id="register-form">
+                <div class="form-group">
+                  <label for="register-name">Full Name</label>
+                  <input type="text" id="register-name" placeholder="e.g. Sanjeevani Rao" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="register-email">College Email ID</label>
+                  <input type="email" id="register-email" placeholder="e.g. 25115001@college.edu" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                  <label for="register-roll">College Roll Number</label>
+                  <input type="text" id="register-roll" placeholder="e.g. 25115001" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                  <label for="register-password">Password</label>
+                  <input type="password" id="register-password" placeholder="••••••••" required autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                  <label for="register-confirm-password">Confirm Password</label>
+                  <input type="password" id="register-confirm-password" placeholder="••••••••" required autocomplete="new-password">
+                </div>
+                <div class="form-group">
+                  <label for="register-role">Role</label>
+                  <select id="register-role" required style="width: 100%; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--radius-md); color: var(--text-primary); outline: none; transition: border-color 0.3s var(--ease-out);">
+                    <option value="student" style="background:#121212; color:#fff;">Student</option>
+                    <option value="faculty" style="background:#121212; color:#fff;">Faculty</option>
+                    <option value="club" style="background:#121212; color:#fff;">Club Member</option>
+                    <option value="admin" style="background:#121212; color:#fff;">Admin</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-glow" style="margin-top: 8px;">Create Account &rarr;</button>
+              </form>
+              <p class="auth-toggle-text" style="text-align: center; margin-top: 16px; font-size: 0.85rem; color: var(--text-secondary);">
+                Already have an account? <a href="#" onclick="toggleAuthMode('login'); return false;" style="color: var(--accent-gold); font-weight: 500; text-decoration: none;">Sign In</a>
+              </p>
+            </div>
+
+            <div class="auth-divider">
+              <span>DEVELOPER QUICK-ACCESS</span>
+            </div>
+
+            <div class="demo-users-grid">
+              <div class="demo-user-card" onclick="quickLogin('25115001', '25115001')">
+                <div class="avatar student">S</div>
+                <div class="demo-info">
+                  <span class="demo-name">Sanjeevani</span>
+                  <span class="demo-role student-role">Student</span>
+                </div>
+              </div>
+              <div class="demo-user-card" onclick="quickLogin('25115002', '25115002')">
+                <div class="avatar student">R</div>
+                <div class="demo-info">
+                  <span class="demo-name">Rahul S.</span>
+                  <span class="demo-role student-role">Student</span>
+                </div>
+              </div>
+              <div class="demo-user-card" onclick="quickLogin('club001', 'club001')">
+                <div class="avatar club">C</div>
+                <div class="demo-info">
+                  <span class="demo-name">Coding Club</span>
+                  <span class="demo-role club-role">Club Org</span>
+                </div>
+              </div>
+              <div class="demo-user-card" onclick="quickLogin('admin001', 'admin001')">
+                <div class="avatar admin">A</div>
+                <div class="demo-info">
+                  <span class="demo-name">Admin Chief</span>
+                  <span class="demo-role admin-role">Admin</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll to explore</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- Animated Statistics -->
+    <section class="landing-section landing-stats" id="landing-stats">
+      <div class="landing-container">
+        <div class="stats-showcase reveal">
+          <div class="stat-showcase-item glass-card">
+            <span class="stat-showcase-num landing-stat" data-count="12000">0</span>
+            <span class="stat-showcase-label">Students Connected</span>
+          </div>
+          <div class="stat-showcase-item glass-card">
+            <span class="stat-showcase-num landing-stat" data-count="340">0</span>
+            <span class="stat-showcase-label">Campus Events</span>
+          </div>
+          <div class="stat-showcase-item glass-card">
+            <span class="stat-showcase-num landing-stat" data-count="89">0</span>
+            <span class="stat-showcase-label">Clubs & Boards</span>
+          </div>
+          <div class="stat-showcase-item glass-card">
+            <span class="stat-showcase-num landing-stat" data-count="96">0</span>
+            <span class="stat-showcase-label">Resolution Rate %</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase -->
+    <section class="landing-section landing-features" id="landing-features">
+      <div class="landing-container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Platform Capabilities</span>
+          <h2 class="section-title">Everything Your Campus<br><span class="text-gold">Needs to Thrive</span></h2>
+          <p class="section-desc">A unified digital layer connecting students, clubs, and administration with premium polish.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-glass-card glass-card reveal">
+            <div class="feature-icon-wrap">📱</div>
+            <h3>Campus Buzz</h3>
+            <p>Real-time coordination for food splits, cab shares, reselling, and lost & found — with live chat rooms.</p>
+            <div class="feature-tag">Live Chat</div>
+          </div>
+          <div class="feature-glass-card glass-card reveal">
+            <div class="feature-icon-wrap">🏛️</div>
+            <h3>Clubs & Board</h3>
+            <p>Official announcements, embedded forms, and event linking for every campus organization.</p>
+            <div class="feature-tag">Official</div>
+          </div>
+          <div class="feature-glass-card glass-card reveal">
+            <div class="feature-icon-wrap">📅</div>
+            <h3>Events Calendar</h3>
+            <p>Discover, plan, and create campus events with admin approval workflows and visual scheduling.</p>
+            <div class="feature-tag">Smart Schedule</div>
+          </div>
+          <div class="feature-glass-card glass-card reveal">
+            <div class="feature-icon-wrap">🛡️</div>
+            <h3>Complaint Board</h3>
+            <p>Anonymous, verified complaint system with admin resolution tracking and status updates.</p>
+            <div class="feature-tag">Verified</div>
+          </div>
+          <div class="feature-glass-card glass-card reveal">
+            <div class="feature-icon-wrap">📊</div>
+            <h3>Campus Pulse</h3>
+            <p>Live analytics dashboard with animated counters, active splits, and upcoming events at a glance.</p>
+            <div class="feature-tag">Analytics</div>
+          </div>
+          <div class="feature-glass-card glass-card reveal">
+            <div class="feature-icon-wrap">🔐</div>
+            <h3>Verified Access</h3>
+            <p>Institute email verification ensures every interaction is authentic and campus-safe.</p>
+            <div class="feature-tag">Secure</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Dashboard Preview -->
+    <section class="landing-section landing-preview" id="landing-preview">
+      <div class="landing-container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Live Preview</span>
+          <h2 class="section-title">Your Command Center<br><span class="text-gold">At a Glance</span></h2>
+        </div>
+        <div class="preview-dashboard glass-card reveal">
+          <div class="preview-topbar">
+            <div class="preview-dots"><span></span><span></span><span></span></div>
+            <span class="preview-title">CampBuzz Dashboard</span>
+          </div>
+          <div class="preview-bento">
+            <div class="preview-widget glass-card">
+              <div class="preview-widget-label">Campus Pulse</div>
+              <div class="preview-mini-stats">
+                <div><span class="preview-num landing-stat" data-count="847">0</span><span>Posts</span></div>
+                <div><span class="preview-num landing-stat" data-count="42">0</span><span>Events</span></div>
+                <div><span class="preview-num landing-stat" data-count="18">0</span><span>Clubs</span></div>
+                <div><span class="preview-num landing-stat" data-count="7">0</span><span>Issues</span></div>
+              </div>
+            </div>
+            <div class="preview-widget glass-card preview-widget-wide">
+              <div class="preview-widget-label">Complaint Analytics</div>
+              <div class="preview-chart">
+                <div class="chart-bar" style="--h:65%"><span>Mon</span></div>
+                <div class="chart-bar" style="--h:45%"><span>Tue</span></div>
+                <div class="chart-bar" style="--h:80%"><span>Wed</span></div>
+                <div class="chart-bar" style="--h:55%"><span>Thu</span></div>
+                <div class="chart-bar" style="--h:90%"><span>Fri</span></div>
+                <div class="chart-bar" style="--h:30%"><span>Sat</span></div>
+                <div class="chart-bar" style="--h:20%"><span>Sun</span></div>
+              </div>
+            </div>
+            <div class="preview-widget glass-card">
+              <div class="preview-widget-label">Active Splits</div>
+              <div class="preview-splits">
+                <div class="preview-split-item"><span>🍕</span> #foodsplit · 2h left</div>
+                <div class="preview-split-item"><span>🚗</span> #cabsplit · 45m left</div>
+                <div class="preview-split-item"><span>💰</span> #resell · 5h left</div>
+              </div>
+            </div>
+            <div class="preview-widget glass-card">
+              <div class="preview-widget-label">Upcoming Events</div>
+              <div class="preview-events">
+                <div class="preview-event-item"><strong>Hackathon 2026</strong><span>Jun 28 · Main Hall</span></div>
+                <div class="preview-event-item"><strong>Tech Talk</strong><span>Jun 30 · Auditorium</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Timeline -->
+    <section class="landing-section landing-timeline" id="landing-timeline">
+      <div class="landing-container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">How It Works</span>
+          <h2 class="section-title">Your Campus Journey<br><span class="text-gold">In Four Steps</span></h2>
+        </div>
+        <div class="timeline-track">
+          <div class="timeline-line" aria-hidden="true"></div>
+          <div class="timeline-step glass-card reveal">
+            <div class="timeline-num">01</div>
+            <h3>Verify Identity</h3>
+            <p>Sign in with your institute email and roll number for authenticated campus access.</p>
+          </div>
+          <div class="timeline-step glass-card reveal">
+            <div class="timeline-num">02</div>
+            <h3>Explore & Connect</h3>
+            <p>Browse campus buzz, join live coordination rooms, and discover upcoming events.</p>
+          </div>
+          <div class="timeline-step glass-card reveal">
+            <div class="timeline-num">03</div>
+            <h3>Coordinate & Create</h3>
+            <p>Post splits, publish club announcements, create events, and raise complaints.</p>
+          </div>
+          <div class="timeline-step glass-card reveal">
+            <div class="timeline-num">04</div>
+            <h3>Track & Resolve</h3>
+            <p>Monitor campus pulse analytics, event calendars, and complaint resolutions in real time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="landing-section landing-testimonials" id="landing-testimonials">
+      <div class="landing-container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Campus Voices</span>
+          <h2 class="section-title">Trusted by<br><span class="text-gold">Our Community</span></h2>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card glass-card reveal">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"CampBuzz transformed how we coordinate food splits. The live chat rooms are a game-changer for campus life."</p>
+            <div class="testimonial-author">
+              <div class="avatar student">S</div>
+              <div><strong>Sanjeevani K.</strong><span>Computer Science · Year 2</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass-card reveal">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"As a club organizer, publishing announcements with embedded forms saved us hours every week."</p>
+            <div class="testimonial-author">
+              <div class="avatar club">C</div>
+              <div><strong>Coding Club</strong><span>Official Organization</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card glass-card reveal">
+            <div class="testimonial-stars">★★★★★</div>
+            <p>"The complaint board gives students a voice while keeping everything verified and accountable."</p>
+            <div class="testimonial-author">
+              <div class="avatar admin">A</div>
+              <div><strong>Admin Chief</strong><span>Campus Administration</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA + Footer -->
+    <section class="landing-section landing-cta reveal">
+      <div class="landing-container">
+        <div class="cta-glass glass-card">
+          <h2>Ready to Experience<br><span class="text-gold">Premium Campus Life?</span></h2>
+          <p>Join thousands of verified students already connected on CampBuzz.</p>
+          <a href="#landing-signin" class="btn btn-primary btn-glow btn-lg">Sign In Now &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="landing-footer">
+      <div class="landing-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <span class="logo-icon">🎓</span>
+            <span class="landing-logo-text">CAMP<span>BUZZ</span></span>
+            <p>Premium Smart Campus Digital Platform</p>
+          </div>
+          <div class="footer-links">
+            <a href="#landing-features">Features</a>
+            <a href="#landing-preview">Platform</a>
+            <a href="#landing-timeline">Journey</a>
+            <a href="#landing-signin">Sign In</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 CampBuzz. All rights reserved.</span>
+          <span class="footer-tagline">Built for Hackathon Excellence</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ================= MAIN APP LAYOUT (BENTO BOX) ================= -->
+  <div id="app-layout" class="view-page">
+    
+    <!-- ─── LEFT SIDEBAR ─── -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <span class="logo-icon">▲</span>
+        <h2>CAMP<span>BUZZ</span></h2>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item active" data-target="buzz-feed" onclick="switchTab(event, 'buzz-feed')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Campus Buzz</span>
+        </a>
+        <a href="#" class="menu-item" data-target="club-feed" onclick="switchTab(event, 'club-feed')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <span>Clubs & Board</span>
+          <span class="badge" id="club-badge" style="display:none;">New</span>
+        </a>
+        <a href="#" class="menu-item" data-target="calendar-view" onclick="switchTab(event, 'calendar-view')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+          <span>Calendar</span>
+        </a>
+        <a href="#" class="menu-item" data-target="complaints-view" onclick="switchTab(event, 'complaints-view')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          <span>Complaints</span>
+        </a>
+        <div class="menu-divider">Phase 3</div>
+        <a href="#" class="menu-item" data-target="mentorship-view" onclick="switchTab(event, 'mentorship-view')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <span>Connect Portal</span>
+        </a>
+        <a href="#" class="menu-item" data-target="placement-view" onclick="switchTab(event, 'placement-view')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+          <span>Placement Hub</span>
+        </a>
+        <a href="#" class="menu-item" data-target="community-view" onclick="switchTab(event, 'community-view')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.996 2.996 0 0 0 17.06 6H16c-.8 0-1.54.37-2.01 1l-2.7 3.6c-.39.52-.59 1.14-.59 1.76V20h2v-6h1.5v6H20zm-8.5-6H11v6H8.5v-6H7v6H5v-8.64c0-1.31.64-2.53 1.71-3.27L9 9.05V6H7.5c-.28 0-.5.22-.5.5v2.09L5.71 8.29C4.66 7.53 4 6.31 4 5V4h2v1h2V4h2v1h2V4h2.29l-1.5 4.5H12v8z"/></svg>
+          <span>Community+</span>
+        </a>
+        <a href="#" class="menu-item" data-target="campus-services-view" onclick="switchTab(event, 'campus-services-view')">
+          <svg class="menu-icon" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+          <span>Campus Services</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="user-avatar-circle" id="current-user-avatar">U</div>
+        <div class="user-details-box">
+          <div class="user-name" id="current-user-name">Loading...</div>
+          <div class="user-role-badge" id="current-user-role">Student</div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Logout">
+          <svg viewBox="0 0 24 24"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ─── CENTER CONTENT AREA ─── -->
+    <main class="content-wrapper">
+      <header class="top-header">
+        <div class="search-bar">
+          <svg viewBox="0 0 24 24" class="search-icon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="global-search" placeholder="Search posts, events, mentors, placements..." oninput="filterSearch()">
+          <span class="command-palette-kbd" style="margin-left:8px; cursor:pointer;" onclick="Phase3.openCommandPalette()" title="Command Palette">Ctrl+K</span>
+        </div>
+        <div class="header-actions">
+          <button class="header-icon-btn" id="notif-btn" title="Notifications" aria-label="Notifications">
+            <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+            <span class="notif-badge" id="notif-badge"></span>
+            <div id="notification-panel">
+              <div class="notif-panel-header">Notifications</div>
+              <div class="notif-list" id="notif-list"></div>
+            </div>
+          </button>
+          <button class="header-icon-btn" onclick="Phase3.toggleAI()" title="AI Assistant" aria-label="AI Assistant">🤖</button>
+        </div>
+      </header>
+
+      <div class="view-content">
+
+        <!-- 1. CAMPUS BUZZ FEED VIEW -->
+        <section id="buzz-feed" class="tab-content active">
+          <div class="feed-header-actions">
+            <div class="feed-filters">
+              <button class="filter-btn active" data-hashtag="all" onclick="filterFeed('all')">All</button>
+              <button class="filter-btn foodsplit" data-hashtag="#foodsplit" onclick="filterFeed('#foodsplit')">#foodsplit</button>
+              <button class="filter-btn cabsplit" data-hashtag="#cabsplit" onclick="filterFeed('#cabsplit')">#cabsplit</button>
+              <button class="filter-btn resell" data-hashtag="#resell" onclick="filterFeed('#resell')">#resell</button>
+              <button class="filter-btn lostfound" data-hashtag="#lostfound" onclick="filterFeed('#lostfound')">#lost & #found</button>
+            </div>
+            <button class="btn btn-primary" id="btn-create-post" onclick="openCreatePostModal()">
+              <svg viewBox="0 0 24 24" class="btn-icon"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+              New Post
+            </button>
+          </div>
+
+          <div class="buzz-feed-grid" id="buzz-posts-container">
+            <!-- Feed cards generated by JS -->
+          </div>
+        </section>
+
+        <!-- 2. CLUB / COMMITTEE OFFICIAL BOARD -->
+        <section id="club-feed" class="tab-content">
+          <div class="feed-header-actions">
+            <div class="section-title-desc">
+              <h2>Clubs & Board</h2>
+              <p>Official communication and announcements.</p>
+            </div>
+            <button class="btn btn-accent" id="btn-create-club-post" onclick="openClubPostModal()" style="display:none;">
+              Publish
+            </button>
+          </div>
+
+          <div class="club-feed-container" id="club-posts-container">
+            <!-- Club post cards with embedded forms -->
+          </div>
+          <div id="club-enhancements"></div>
+        </section>
+
+        <!-- 3. EVENTS CALENDAR VIEW -->
+        <section id="calendar-view" class="tab-content">
+          <div class="feed-header-actions">
+            <div class="section-title-desc">
+              <h2>Events Calendar</h2>
+              <p>Discover and plan your week.</p>
+            </div>
+            <div class="calendar-btn-group" style="display:flex; gap:8px;">
+              <button class="btn btn-secondary" id="btn-pending-requests" onclick="openPendingRequestsModal()" style="display:none;">
+                Admin Approvals (<span id="pending-count">0</span>)
+              </button>
+              <button class="btn btn-primary" id="btn-create-event" onclick="openCreateEventModal()">
+                Create Event
+              </button>
+            </div>
+          </div>
+
+          <div class="calendar-layout">
+            <div class="calendar-card">
+              <div class="calendar-header-nav">
+                <button onclick="prevMonth()" class="nav-arrow">&larr;</button>
+                <h3 id="calendar-month-year">June 2026</h3>
+                <button onclick="nextMonth()" class="nav-arrow">&rarr;</button>
+              </div>
+              <div class="calendar-weekdays">
+                <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+              </div>
+              <div class="calendar-days-grid" id="calendar-grid">
+                <!-- Days injected by JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. COMPLAINTS VIEW -->
+        <section id="complaints-view" class="tab-content">
+          <div class="feed-header-actions">
+            <div class="section-title-desc">
+              <h2>Complaints</h2>
+              <p>Verified, anonymous community board.</p>
+            </div>
+            <button class="btn btn-red" id="btn-create-complaint" onclick="openCreateComplaintModal()" style="display:none;">
+              Raise Complaint
+            </button>
+          </div>
+
+          <div class="complaints-grid" id="complaints-container">
+            <!-- Injected complaints -->
+          </div>
+        </section>
+
+        <!-- 5. SENIOR-JUNIOR CONNECT PORTAL -->
+        <section id="mentorship-view" class="tab-content">
+          <!-- Rendered by phase3.js -->
+        </section>
+
+        <!-- 6. PLACEMENT HUB -->
+        <section id="placement-view" class="tab-content">
+          <!-- Rendered by phase3.js -->
+        </section>
+
+        <!-- 7. COMMUNITY+ -->
+        <section id="community-view" class="tab-content">
+          <!-- Rendered by phase3.js -->
+        </section>
+
+        <!-- 8. CAMPUS SERVICES -->
+        <section id="campus-services-view" class="tab-content">
+          <!-- Rendered by phase3.js -->
+        </section>
+
+      </div>
+    </main>
+    
+    <!-- ─── RIGHT CONTEXT SIDEBAR ─── -->
+    <aside class="context-sidebar">
+      <div class="context-module" id="welcome-widget-panel">
+        <div class="welcome-widget glass-card" id="welcome-widget">
+          <h4>Welcome back!</h4>
+          <p>Your campus command center.</p>
+        </div>
+      </div>
+      <div class="context-module">
+        <h3>Smart Recommendations</h3>
+        <div class="bento-module">
+          <div id="smart-recommendations" class="recent-pages-list"></div>
+        </div>
+      </div>
+      <div class="context-module">
+        <h3>Recently Visited</h3>
+        <div class="bento-module">
+          <div id="recent-pages" class="recent-pages-list"></div>
+        </div>
+      </div>
+      <div class="context-module campus-stats-panel">
+        <h3>Campus Pulse</h3>
+        <div class="bento-module stats-grid">
+          <div class="stat-pill">
+            <span class="stat-counter" id="stat-posts" data-count="0">0</span>
+            <span class="stat-label">Posts</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-counter" id="stat-events" data-count="0">0</span>
+            <span class="stat-label">Events</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-counter" id="stat-clubs" data-count="0">0</span>
+            <span class="stat-label">Announcements</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-counter" id="stat-complaints" data-count="0">0</span>
+            <span class="stat-label">Complaints</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="context-module">
+        <h3>Active Splits</h3>
+        <div class="bento-module">
+          <div id="active-splits-stories">
+            <!-- Timers injected here natively via app.js unchanged logic -->
+          </div>
+        </div>
+      </div>
+      
+      <!-- upcoming-events-panel class REQUIRED by app.js line 847: document.querySelector('.upcoming-events-panel h3') -->
+      <div class="context-module upcoming-events-panel">
+        <h3>Upcoming Events</h3>
+        <div class="bento-module">
+          <div class="events-list" id="events-list-container">
+            <!-- Upcoming list view injected here natively -->
+          </div>
+        </div>
+      </div>
+      <div class="context-module">
+        <h3>Recent Activity</h3>
+        <div class="bento-module">
+          <div id="activity-timeline"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ================= MODALS & OVERLAYS ================= -->
+
+  <!-- Modal: Create Campus Buzz Post -->
+  <div id="modal-create-post" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Create New Coordination Post</h3>
+        <button class="modal-close" onclick="closeModal('modal-create-post')">&times;</button>
+      </div>
+      <form id="create-post-form">
+        <div class="form-group">
+          <label for="post-title">Title</label>
+          <input type="text" id="post-title" placeholder="What are you coordinating?" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="post-hashtag">Intent Hashtag</label>
+            <select id="post-hashtag" onchange="togglePostTimerView()" required>
+              <option value="#foodsplit">🍕 #foodsplit</option>
+              <option value="#cabsplit">🚗 #cabsplit</option>
+              <option value="#resell">💰 #resell</option>
+              <option value="#lost">🔍 #lost</option>
+              <option value="#found">🔍 #found</option>
+            </select>
+          </div>
+          <div class="form-group half" id="post-timer-container">
+            <label for="post-timer">Timer Lifespan</label>
+            <select id="post-timer">
+              <option value="10">10 Minutes</option>
+              <option value="60">1 Hour</option>
+              <option value="180">3 Hours</option>
+              <option value="1440" selected>24 Hours</option>
+              <option value="2880">2 Days</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="post-desc">Description</label>
+          <textarea id="post-desc" rows="3" placeholder="Provide extra coordinate details..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Cover Image (Presets)</label>
+          <div class="image-uploader-presets">
+            <input type="hidden" id="post-image-url" value="">
+            <div class="presets-gallery" id="presets-gallery" style="display:flex; gap:8px; margin-bottom:8px;">
+              <!-- Clickable preset images -->
+            </div>
+            <div class="custom-image-upload">
+              <input type="url" id="post-image-url-custom" placeholder="Or custom URL (optional)" onchange="useCustomImageUrl(this.value)">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Post to Campus Buzz</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Club Post -->
+  <div id="modal-club-post" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Publish Club Announcement</h3>
+        <button class="modal-close" onclick="closeModal('modal-club-post')">&times;</button>
+      </div>
+      <form id="create-club-post-form">
+        <div class="form-group">
+          <label for="club-post-title">Announcement Title</label>
+          <input type="text" id="club-post-title" placeholder="e.g. Hackathon Registration" required>
+        </div>
+        <div class="form-group">
+          <label for="club-post-desc">Details</label>
+          <textarea id="club-post-desc" rows="4" placeholder="Write official details..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="club-post-link">External Link</label>
+          <input type="url" id="club-post-link" placeholder="e.g. Registration portal">
+        </div>
+        <div class="form-group">
+          <label for="club-post-form">Google Form Share Link</label>
+          <input type="url" id="club-post-form" placeholder="Pasted links auto-render iframe" oninput="validateGoogleFormLink(this.value)">
+        </div>
+        <div class="form-group">
+          <label for="club-post-event">Link to Event</label>
+          <select id="club-post-event">
+            <option value="">-- No Linked Event --</option>
+            <!-- Injected existing events of this club -->
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Publish Official Post</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Calendar Event -->
+  <div id="modal-create-event" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="event-modal-title">Create Campus Event</h3>
+        <button class="modal-close" onclick="closeModal('modal-create-event')">&times;</button>
+      </div>
+      <form id="create-event-form">
+        <div class="form-group">
+          <label for="event-name">Event Name</label>
+          <input type="text" id="event-name" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="event-date">Date</label>
+            <input type="date" id="event-date" required>
+          </div>
+          <div class="form-group half">
+            <label for="event-time">Time</label>
+            <input type="time" id="event-time" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="event-venue">Venue</label>
+          <input type="text" id="event-venue" required>
+        </div>
+        <div class="form-group">
+          <label for="event-desc">Description</label>
+          <textarea id="event-desc" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="event-form-submit-btn">Publish Event</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Create Complaint -->
+  <div id="modal-create-complaint" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Raise Campus Complaint</h3>
+        <button class="modal-close" onclick="closeModal('modal-create-complaint')">&times;</button>
+      </div>
+      <form id="create-complaint-form">
+        <div class="form-group">
+          <label for="comp-title">Title</label>
+          <input type="text" id="comp-title" required>
+        </div>
+        <div class="form-group">
+          <label for="comp-desc">Details</label>
+          <textarea id="comp-desc" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-red btn-block">Submit Anonymous Complaint</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Admin Approvals Panel -->
+  <div id="modal-admin-requests" class="modal-overlay">
+    <div class="modal-card wide">
+      <div class="modal-header">
+        <h3>Admin Approvals: Requests</h3>
+        <button class="modal-close" onclick="closeModal('modal-admin-requests')">&times;</button>
+      </div>
+      <div class="requests-list-container" id="admin-requests-list" style="display:flex; flex-direction:column; gap:8px;">
+        <!-- List of student event creation requests -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Live Chat Room -->
+  <div id="modal-chat-room" class="modal-overlay">
+    <div class="chat-modal-container">
+      <div class="chat-left-info">
+        <span class="chat-post-badge" id="chat-hashtag">#foodsplit</span>
+        <h2 id="chat-post-title">Pizza split order</h2>
+        <p id="chat-post-desc">Loading...</p>
+        
+        <div class="chat-poster-details">
+          <div class="chat-poster-name" id="chat-poster-name">Host</div>
+          <div class="chat-timer-count" id="chat-room-timer" style="display:none;">Remaining: 23 hrs</div>
+        </div>
+        <div class="chat-actions-pane" id="chat-actions-pane" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="chat-right-stream">
+        <div class="chat-stream-header">
+          <h3>Coordination Room</h3>
+          <button class="modal-close" onclick="closeChatRoom()">&times;</button>
+        </div>
+        <div class="chat-messages-container" id="chat-messages-box">
+          <!-- Live messages stream -->
+        </div>
+        <form id="chat-input-form" class="chat-input-area">
+          <input type="text" id="chat-message-input" placeholder="Type message..." required>
+          <button type="submit" class="chat-send-btn">&rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  <!-- Phase 3: Mentor Detail Modal -->
+  <div id="modal-mentor-detail" class="modal-overlay">
+    <div class="modal-card wide">
+      <div class="modal-header">
+        <h3 id="mentor-modal-name">Senior Profile</h3>
+        <button class="modal-close" onclick="closeModal('modal-mentor-detail')">&times;</button>
+      </div>
+      <div id="mentor-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Phase 3: Keyboard Shortcuts Modal -->
+  <div id="modal-shortcuts" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Keyboard Shortcuts</h3>
+        <button class="modal-close" onclick="closeModal('modal-shortcuts')">&times;</button>
+      </div>
+      <div class="shortcuts-grid">
+        <span>Open Command Palette</span><kbd>Ctrl + K</kbd>
+        <span>Keyboard Shortcuts Help</span><kbd>?</kbd>
+        <span>Close Modal / Panel</span><kbd>Esc</kbd>
+        <span>Campus Buzz</span><kbd>Via Ctrl+K</kbd>
+        <span>AI Assistant</span><kbd>Via Ctrl+K</kbd>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phase 3: Command Palette -->
+  <div id="command-palette-overlay">
+    <div class="command-palette">
+      <div class="command-palette-input-wrap">
+        <span>🔍</span>
+        <input type="text" id="cmd-search" placeholder="Search pages, actions..." autocomplete="off">
+        <span class="command-palette-kbd">Esc</span>
+      </div>
+      <div class="command-results" id="command-results"></div>
+    </div>
+  </div>
+
+  <!-- Phase 3: AI Assistant -->
+  <button id="ai-assistant-fab" aria-label="Open AI Assistant" title="Smart Campus AI">🤖</button>
+  <div id="ai-assistant-panel">
+    <div class="ai-panel-header">
+      <h3>🤖 Smart Campus AI</h3>
+      <button class="modal-close" onclick="Phase3.toggleAI()">&times;</button>
+    </div>
+    <div class="ai-quick-actions" id="ai-quick-actions">
+      <button class="ai-quick-btn" data-action="navigate">🗺️ Navigate</button>
+      <button class="ai-quick-btn" data-action="complaint">🛡️ Complaints</button>
+      <button class="ai-quick-btn" data-action="events">📅 Events</button>
+      <button class="ai-quick-btn" data-action="clubs">🏛️ Clubs</button>
+      <button class="ai-quick-btn" data-action="placement">💼 Placement</button>
+      <button class="ai-quick-btn" data-action="resume">📄 Resume</button>
+      <button class="ai-quick-btn" data-action="interview">🎯 Interview</button>
+      <button class="ai-quick-btn" data-action="roadmap">🛤️ Roadmap</button>
+    </div>
+    <div class="ai-messages" id="ai-messages"></div>
+    <div class="ai-input-area">
+      <button class="ai-voice-btn" title="Voice input (coming soon)" aria-label="Voice input">🎤</button>
+      <input type="text" id="ai-input" placeholder="Ask anything about campus...">
+      <button class="btn btn-primary" id="ai-send-btn" style="padding:8px 16px;">Send</button>
+    </div>
+    <div class="ai-integration-note">Integration: POST /api/ai/chat · Voice-ready UI</div>
+  </div>
+
+  <!-- Phase 3: Scroll to Top -->
+  <button id="scroll-to-top" aria-label="Scroll to top" title="Back to top">↑</button>
+
+  <script src="phase3-data.js"></script>
+  <script src="app.js"></script>
+  <script src="phase3.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

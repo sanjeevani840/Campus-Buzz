@@ -1,0 +1,22 @@
+[
+  {
+    "id": "event_1",
+    "name": "Hackathon 2026",
+    "date": "2026-07-05",
+    "time": "09:00",
+    "venue": "Computer Science Lab 3",
+    "description": "Unleash your creativity and coding skills in this 24-hour hackathon. Refreshments and certificates will be provided.",
+    "organizerEmail": "codingclub@college.edu",
+    "organizerName": "Coding Club"
+  },
+  {
+    "id": "event_2",
+    "name": "Annual Play Auditions",
+    "date": "2026-06-30",
+    "time": "17:30",
+    "venue": "Campus OAT (Open Air Theatre)",
+    "description": "Drama Society is hosting auditions for the upcoming annual stage play. All students are welcome to audition.",
+    "organizerEmail": "drama@college.edu",
+    "organizerName": "Drama Society"
+  }
+]

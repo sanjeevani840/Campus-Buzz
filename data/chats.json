@@ -1,0 +1,33 @@
+{
+  "post_1": [
+    {
+      "senderEmail": "25115001@college.edu",
+      "senderName": "Sanjeevani Rao",
+      "text": "Hi guys, I am ordering in 15 mins. Let me know what pizzas you want.",
+      "timestamp": 1782537660214
+    },
+    {
+      "senderEmail": "25115002@college.edu",
+      "senderName": "Rahul Sharma",
+      "text": "Hey, I would like to split the Veg Margherita pizza! Count me in.",
+      "timestamp": 1782538160214
+    }
+  ],
+  "post_2": [
+    {
+      "senderEmail": "25115002@college.edu",
+      "senderName": "Rahul Sharma",
+      "text": "Cab is booked. Fare is showing ₹950 total. If we find 2 more, it will be around ₹240 each.",
+      "timestamp": 1782534660214
+    }
+  ],
+  "post_3": [
+    {
+      "senderEmail": "25115002@college.edu",
+      "senderName": "Rahul Sharma",
+      "text": "Hey Sanjeevani, is the Kindle still available? How old is it?",
+      "timestamp": 1782530660214
+    }
+  ],
+  "post_x6ks0n0wl": []
+}

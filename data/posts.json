@@ -1,0 +1,74 @@
+[
+  {
+    "id": "post_1",
+    "title": "Splitting Pizza order from Dominoes",
+    "description": "Ordering a double cheese Margherita and Pepper BBQ chicken. Anyone want to split the cost? Meet at Hostel 3 lounge.",
+    "hashtag": "#foodsplit",
+    "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60",
+    "posterEmail": "25115001@college.edu",
+    "posterName": "Sanjeevani Rao",
+    "createdAt": 1782537060214,
+    "expiresAt": 1782623460214,
+    "isClosed": false
+  },
+  {
+    "id": "post_2",
+    "title": "Cab split to Airport tomorrow early morning",
+    "description": "Looking for 2 people to split a cab to Delhi Airport. Flight is at 7 AM, cab will start at 4 AM from Main Gate.",
+    "hashtag": "#cabsplit",
+    "imageUrl": "https://images.unsplash.com/photo-1494783367193-149034c05e8f?w=500&auto=format&fit=crop&q=60",
+    "posterEmail": "25115002@college.edu",
+    "posterName": "Rahul Sharma",
+    "createdAt": 1782533460214,
+    "expiresAt": 1782576660214,
+    "isClosed": false
+  },
+  {
+    "id": "post_3",
+    "title": "Selling Kindle Paperwhite (10th Gen)",
+    "description": "Excellent condition, 8GB storage, backlight works perfectly. Price: ₹6,500. Negotiable. Drop in chat if interested!",
+    "hashtag": "#resell",
+    "imageUrl": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60",
+    "posterEmail": "25115001@college.edu",
+    "posterName": "Sanjeevani Rao",
+    "createdAt": 1782522660214,
+    "isClosed": false
+  },
+  {
+    "id": "post_4",
+    "title": "Lost black leather wallet in Library",
+    "description": "Lost my wallet containing roll card and driving license near the first-floor reading room. Please contact if found!",
+    "hashtag": "#lost",
+    "imageUrl": "https://images.unsplash.com/photo-1627124112126-7d4d4b7c91cd?w=500&auto=format&fit=crop&q=60",
+    "posterEmail": "25115002@college.edu",
+    "posterName": "Rahul Sharma",
+    "posterPhone": "+91 98765 01234",
+    "createdAt": 1782535260214
+  },
+  {
+    "id": "post_x6ks0n0wl",
+    "title": "pizza",
+    "description": "Do anyone want pizza",
+    "hashtag": "#foodsplit",
+    "imageUrl": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&auto=format&fit=crop&q=60",
+    "posterEmail": "asrao001.btech@cse.nitrr.ac.in",
+    "posterName": "Asrao    btech",
+    "posterPhone": "+91 99999 99999",
+    "createdAt": 1782540915214,
+    "expiresAt": 1782627315147,
+    "isClosed": false
+  },
+  {
+    "id": "post_0uzo6f21d",
+    "title": "earpods",
+    "description": "my earpods are missing",
+    "hashtag": "#lost",
+    "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=60",
+    "posterEmail": "asrao001.btech@cse.nitrr.ac.in",
+    "posterName": "Asrao    btech",
+    "posterPhone": "+91 99999 99999",
+    "createdAt": 1782541168809,
+    "expiresAt": null,
+    "isClosed": false
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "id": "club_post_1",
+    "title": "Hackathon 2026 Registration Open!",
+    "description": "The annual 24-hour campus hackathon is here! Prizes worth ₹1,00,000. Scan the QR code or fill out the embedded form below.",
+    "link": "https://github.com",
+    "googleFormEmbed": "https://docs.google.com/forms/d/e/1FAIpQLSfD_Nefx40r75w5bXQ3TjJgqTzD4gXf14N1z7fCq-356vC0qw/viewform?embedded=true",
+    "linkedEventId": "event_1",
+    "posterEmail": "codingclub@college.edu",
+    "posterName": "Coding Club",
+    "createdAt": 1782454260214
+  }
+]

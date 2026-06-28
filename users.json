@@ -1,0 +1,44 @@
+[
+  {
+    "email": "25115001@college.edu",
+    "rollNumber": "25115001",
+    "name": "Sanjeevani Rao",
+    "role": "student",
+    "phone": "+91 98765 43210"
+  },
+  {
+    "email": "25115002@college.edu",
+    "rollNumber": "25115002",
+    "name": "Rahul Sharma",
+    "role": "student",
+    "phone": "+91 98765 01234"
+  },
+  {
+    "email": "codingclub@college.edu",
+    "rollNumber": "club001",
+    "name": "Coding Club",
+    "role": "club",
+    "phone": "+91 91234 56789"
+  },
+  {
+    "email": "drama@college.edu",
+    "rollNumber": "club002",
+    "name": "Drama Society",
+    "role": "club",
+    "phone": "+91 92345 67890"
+  },
+  {
+    "email": "admin@college.edu",
+    "rollNumber": "admin001",
+    "name": "Chief Administrator",
+    "role": "admin",
+    "phone": "+91 99999 99999"
+  },
+  {
+    "email": "asrao001.btech@cse.nitrr.ac.in",
+    "rollNumber": "25115001",
+    "name": "Asrao    btech",
+    "role": "student",
+    "phone": "+91 99999 99999"
+  }
+]

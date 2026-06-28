@@ -1,0 +1,66 @@
+[
+  {
+    "email": "25115001@college.edu",
+    "rollNumber": "25115001",
+    "name": "Sanjeevani Rao",
+    "role": "student",
+    "phone": "+91 98765 43210",
+    "password": "$2b$10$BbqcQ.Vy/K4kgf7vF2pW4ugk5qWi.R0Zgt.mcZ1AB6ZA.PrSr46KS"
+  },
+  {
+    "email": "25115002@college.edu",
+    "rollNumber": "25115002",
+    "name": "Rahul Sharma",
+    "role": "student",
+    "phone": "+91 98765 01234",
+    "password": "$2b$10$5PRnuDq/UBtFm8XVukv2ie5uro3eUM6Bsf27YIxhjk5Im45iogVwi"
+  },
+  {
+    "email": "codingclub@college.edu",
+    "rollNumber": "club001",
+    "name": "Coding Club",
+    "role": "club",
+    "phone": "+91 91234 56789",
+    "password": "$2b$10$3lQMRVZRYtez1Aoufv541O2CPz2QQSEvUzPiMRnSANi9mG9xv33Vy"
+  },
+  {
+    "email": "drama@college.edu",
+    "rollNumber": "club002",
+    "name": "Drama Society",
+    "role": "club",
+    "phone": "+91 92345 67890",
+    "password": "$2b$10$Ju.mXBrMfeYyyM4ru4iC7OyDDZTYTvObqLnpYZtDSX7DC0.NZh5VG"
+  },
+  {
+    "email": "admin@college.edu",
+    "rollNumber": "admin001",
+    "name": "Chief Administrator",
+    "role": "admin",
+    "phone": "+91 99999 99999",
+    "password": "$2b$10$BOw/pWdGzWedhilMdH9Lce1FVq.V8rWUiUk9KpKdPOBo8NNA3NnYW"
+  },
+  {
+    "email": "25115070@college.edu",
+    "rollNumber": "25115070",
+    "name": "        ",
+    "role": "student",
+    "phone": "+91 99999 99999",
+    "password": "$2b$10$TFBkrCz3yaMr8RLDOeQGquXGy3NhTZiofPFxjRU3PQg0FNGcB1ln."
+  },
+  {
+    "email": "25115070@gmail.com",
+    "rollNumber": "25115070",
+    "name": "        ",
+    "role": "student",
+    "phone": "+91 99999 99999",
+    "password": "$2b$10$Tak4xZCN38wAy5TwPwFkKe5uZEuMrLSqclH0m22QrSy02v9Fyz4Om"
+  },
+  {
+    "name": "Test Student",
+    "email": "teststudent@college.edu",
+    "rollNumber": "test_roll_1001",
+    "password": "$2b$10$kYksA82qtXlChdsgEIFMC.KwXPtl2Tbpf9PCuriVlWXL773V95Rqm",
+    "role": "student",
+    "phone": "+91 99999 99999"
+  }
+]
